@@ -1,0 +1,10 @@
+{
+  "name": "네이버 영어사전 크롬 확장",
+  "version": "1.0.0",
+  "description": "네이버 영어사전을 빠르게 사용하기 위한 크롬 확장",
+  "icons": { "128": "images/favicon.ico" },
+  "browser_action": {
+    "default_icon": "images/favicon.ico",
+    "popup": "popup.html"
+  }
+}
