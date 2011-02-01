@@ -7,9 +7,10 @@
 ## 설치 방법
 
 크롭 웹스토어에 올리지는 않았어요. (5$가 필요하다네요 ㅠㅠ)
+
 수동설치 해야 합니다.
 
-1. 압축 파일을 다운로드하세요.
+1. [압축파일](https://github.com/codian/naver_endic_for_chrome/archives/master)을 다운로드하세요.
 2. 적당한 디렉토리에 압축을 푸세요.
 3. 크롬 메뉴 > Tool > Extension 을 선택해 Extension 관리페이지를 띄우세요.
 4. Extension 관리페이지 우상단의 "Developer Mode" 를 선택하세요.
