@@ -15,9 +15,39 @@
   </style>
   
   <script>
+  function init() {
+    get_selection(function(resp) {
+      if (resp.code == 0) {
+        var sel = resp.return_value;
+        console.log("SELECTED: " + sel)
+        
+        var the_frame = document.getElementById('the_frame');
+        if (sel.length > 0) {
+          the_frame.src = "http://m.endic.naver.com/search.nhn?searchOption=entryIdiom&query=" + sel;
+        } else {
+          the_frame.src = "http://m.endic.naver.com";          
+        }
+      } else {
+        console.log(resp.message);
+      }
+    });
+  }
+    
+  function get_selection(callback) {
+    chrome.tabs.getSelected(null, function(tab) {
+      try {
+        // Send a request to the content script.
+        chrome.tabs.sendRequest(tab.id, {action: "get_selection", params: {}}, callback);
+      } catch(e) {
+        console.log(e);
+      }
+    });
+  }
+
+    
   </script>
 </head>
-<body>
-  <iframe src="http://m.endic.naver.com"></iframe>
+<body onload="init();">
+  <iframe id="the_frame" src="http://m.endic.naver.com"></iframe>
 </body>
 </html>

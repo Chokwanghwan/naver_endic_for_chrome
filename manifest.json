@@ -6,5 +6,16 @@
   "browser_action": {
     "default_icon": "images/favicon.ico",
     "popup": "popup.html"
-  }
+  },
+  "content_scripts": [{
+    "run_at": "document_start",
+    "all_frames": true,
+    "matches": ["http://*/*"],
+    "js": ["javascripts/naver_endic_for_chrome.js"]
+  }],
+  "permissions": [
+    "tabs",
+    "http://m.endic.naver.com/*"
+  ]
+
 }
